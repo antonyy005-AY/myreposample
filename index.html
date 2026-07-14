@@ -1,53 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Birthday Link</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-    }
-    a {
-      font-size: 24px;
-      color: #d63384;
-      text-decoration: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="card">
+    <h1>🎉 Happy Birthday!</h1>
+    <p id="mainMessage">Click below to see your birthday surprise.</p>
 
-  <a href="#" onclick="openBirthday(); return false;">Happy Birthday</a>
+    <button id="surpriseBtn">Open Surprise</button>
+    <button id="newMsgBtn">New Message</button>
+  </div>
 
-  <script>
-    function openBirthday() {
-      const win = window.open("", "_blank", "width=500,height=400");
-      if (!win) return;
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>🎂 Surprise!</h2>
+      <p>Wishing you a day full of joy, laughter, and beautiful memories.</p>
+      <button id="closePopup">Close</button>
+    </div>
+  </div>
 
-      const message = prompt("Enter a birthday message:");
-      win.document.write(`
-        <html>
-          <head>
-            <title>Happy Bday</title>
-            <style>
-              body {
-                font-family: Arial, sans-serif;
-                text-align: center;
-                padding-top: 80px;
-                background: #fff8fb;
-              }
-              h1 { color: #ff4081; }
-              p { font-size: 20px; color: #333; }
-            </style>
-          </head>
-          <body>
-            <h1>Happy Bday</h1>
-            <p>${message ? message : "Have a wonderful birthday!"}</p>
-          </body>
-        </html>
-      `);
-      win.document.close();
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
