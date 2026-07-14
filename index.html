@@ -3,22 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday</title>
+  <title>Happy Birthday Bestie</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="card">
-    <h1>🎉 Happy Birthday!</h1>
-    <p id="mainMessage">Click below to see your birthday surprise.</p>
-
-    <button id="surpriseBtn">Open Surprise</button>
-    <button id="newMsgBtn">New Message</button>
+  <div class="floating-bg">
+    <span>🎈</span>
+    <span>💖</span>
+    <span>✨</span>
+    <span>🎂</span>
+    <span>🎉</span>
+    <span>🌸</span>
   </div>
+
+  <main class="card" id="birthdayCard">
+    <div class="glow"></div>
+
+    <h1>Happy Birthday Bestie! 🎉</h1>
+    <p id="mainMessage">You are the sweetest soul ever. Click below for a surprise!</p>
+
+    <div class="btn-group">
+      <button id="surpriseBtn">Open Surprise</button>
+      <button id="newMsgBtn">New Message</button>
+    </div>
+  </main>
 
   <div id="popup" class="popup">
     <div class="popup-content">
-      <h2>🎂 Surprise!</h2>
-      <p>Wishing you a day full of joy, laughter, and beautiful memories.</p>
+      <h2>🎂 Surprise Bestie!</h2>
+      <p>You deserve all the happiness, love, success, and cake today and always.</p>
       <button id="closePopup">Close</button>
     </div>
   </div>
