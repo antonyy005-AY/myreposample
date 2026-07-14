@@ -1,1 +1,53 @@
-# myreposample
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday Link</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    a {
+      font-size: 24px;
+      color: #d63384;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" onclick="openBirthday(); return false;">Happy Birthday</a>
+
+  <script>
+    function openBirthday() {
+      const win = window.open("", "_blank", "width=500,height=400");
+      if (!win) return;
+
+      const message = prompt("Enter a birthday message:");
+      win.document.write(`
+        <html>
+          <head>
+            <title>Happy Bday</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding-top: 80px;
+                background: #fff8fb;
+              }
+              h1 { color: #ff4081; }
+              p { font-size: 20px; color: #333; }
+            </style>
+          </head>
+          <body>
+            <h1>Happy Bday</h1>
+            <p>${message ? message : "Have a wonderful birthday!"}</p>
+          </body>
+        </html>
+      `);
+      win.document.close();
+    }
+  </script>
+
+</body>
+</html>
