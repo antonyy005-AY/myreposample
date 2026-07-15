@@ -148,3 +148,73 @@ button:active {
   h1 { font-size: 26px; }
   p { font-size: 16px; }
 }
+
+.balloon-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.balloon-panel {
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 18px;
+  padding: 26px;
+  text-align: center;
+  animation: popupIn 0.3s ease;
+}
+
+.balloon-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.balloon {
+  width: 70px;
+  height: 90px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(135deg, #ff4d8d, #ff7eb3);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 10px 18px rgba(255, 77, 141, 0.35);
+}
+
+.balloon:hover {
+  transform: translateY(-10px) scale(1.08);
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -28px;
+  width: 2px;
+  height: 28px;
+  background: #bbb;
+}
+
+.balloon.popped {
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.balloon-message {
+  min-height: 28px;
+  font-weight: bold;
+  color: #d63384;
+  margin-top: 10px;
+}
