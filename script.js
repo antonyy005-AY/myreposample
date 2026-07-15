@@ -35,3 +35,30 @@ card.addEventListener("mousemove", (e) => {
 card.addEventListener("mouseleave", () => {
   card.style.transform = "rotateX(0deg) rotateY(0deg) translateY(0)";
 });
+
+
+const balloonBtn = document.getElementById("balloonBtn");
+const balloonModal = document.getElementById("balloonModal");
+const closeBalloon = document.getElementById("closeBalloon");
+const balloonMessage = document.getElementById("balloonMessage");
+const balloons = document.querySelectorAll(".balloon");
+
+balloonBtn.addEventListener("click", () => {
+  balloonModal.style.display = "flex";
+});
+
+closeBalloon.addEventListener("click", () => {
+  balloonModal.style.display = "none";
+  balloons.forEach(balloon => {
+    balloon.classList.remove("popped");
+  });
+  balloonMessage.textContent = "Click a balloon to see a message.";
+});
+
+balloons.forEach(balloon => {
+  balloon.addEventListener("click", () => {
+    const msg = balloon.getAttribute("data-msg");
+    balloon.classList.add("popped");
+    balloonMessage.textContent = msg;
+  });
+});
